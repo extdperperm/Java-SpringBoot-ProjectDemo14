@@ -24,8 +24,8 @@ public class SecurityConfig {
     			   
 		   http
 			.authorizeHttpRequests((authorize) -> authorize
-					          .requestMatchers("/getOne","/add").permitAll() 
-					          .requestMatchers("/autenticacion","/getAll").authenticated() //El usuario solo ha de estar autenticado.
+					          .requestMatchers("/getAll", "/getOne","/add").permitAll() 
+					          .requestMatchers("/autenticacion").authenticated() //El usuario solo ha de estar autenticado.
 					          .anyRequest().authenticated()
            )
 			.httpBasic(withDefaults());
